@@ -73,8 +73,8 @@ func runWasm(w http.ResponseWriter, r *http.Request) {
 	// Define stdout and stderr buffers
 	var stdout, stderr bytes.Buffer
 
-	//cmd := exec.Command("wasmtime", "main.wasm")
-	cmd := exec.Command("go", "run", "module.go") // Run the Go module instead of the WebAssembly module for testing
+	cmd := exec.Command("wasmtime", "main.wasm")
+	// cmd := exec.Command("go", "run", "module.go") // Run the Go module instead of the WebAssembly module for testing
 
 	// Set the input from HTTP request body as stdin for the command
 	cmd.Stdin = bytes.NewReader([]byte(input))
